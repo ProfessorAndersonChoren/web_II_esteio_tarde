@@ -16,8 +16,8 @@
             <img src="/imgs/logo_site.png" alt="Logo do site">
             <span class="text-xl font-bold text-white">Larabrary</span>
             <nav>
-                <a href="{{route('book.index')}}" class="pr-4 custom-link-menu">Dashboard</a>
-                <a href="{{route('book.create')}}" class="custom-link-menu">Cadastrar novo livro</a>
+                <a href="{{ route('book.index') }}" class="pr-4 custom-link-menu">Dashboard</a>
+                <a href="{{ route('book.create') }}" class="custom-link-menu">Cadastrar novo livro</a>
             </nav>
         </div>
         <div id="drop-down" class="flex flex-col items-end">

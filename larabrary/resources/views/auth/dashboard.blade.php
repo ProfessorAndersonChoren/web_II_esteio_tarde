@@ -17,24 +17,27 @@
                 <th>Ações</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>0-1541-3464-3</td>
-                    <td>Título livro 1</td>
-                    <td>Autor livro 1</td>
-                    <td>Editora livro 1</td>
-                    <td>200 páginas</td>
-                    <td class="action-td">
-                        <a href="#" class="flex items-center gap-2 action-button orange-button">
-                            <img src="imgs/edit.svg" alt="Edit icon" width="20">
-                            <span class="text-base font-bold">Editar</span>
-                        </a>
-                        <a href="#" class="flex items-center gap-2 action-button red-button">
-                            <img src="imgs/delete.svg" alt="Delete icon" width="20">
-                            <span class="text-base font-bold">Deletar</span>
-                        </a>
-                    </td>
-                </tr>
+                @foreach ($books->all() as $book)
+                    <tr>
+                        <td>{{ $book['isbn'] }}</td>
+                        <td>{{ $book['title'] }}</td>
+                        <td>{{ $book['author'] }}</td>
+                        <td>{{ $book['publisher'] }}</td>
+                        <td>{{ $book['pages'] }} páginas</td>
+                        <td class="action-td">
+                            <a href="{{ route('book.edit', $book['id']) }}"
+                                class="flex items-center gap-2 action-button orange-button">
+                                <img src="imgs/edit.svg" alt="Edit icon" width="20">
+                                <span class="text-base font-bold">Editar</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 action-button red-button">
+                                <img src="imgs/delete.svg" alt="Delete icon" width="20">
+                                <span class="text-base font-bold">Deletar</span>
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
-        @endif
-    @endsection
+    @endif
+@endsection
