@@ -2,7 +2,9 @@
 
 @section('main-content')
     <h1 class="mb-8 text-6xl text-center text-red-950">Editar o livro {{$book['title']}}</h1>
-    <form action="#" method="post" class="flex flex-col w-full">
+    <form action="{{route('book.update',$book->id)}}" method="post" class="flex flex-col w-full">
+        @csrf
+        @method('PUT')
         <label for="isbn" class="custom-label">ISBN do livro:</label>
         <input type="text" id="isbn" name="isbn" class="mb-6 custom-input" value="{{$book['isbn']}}" readonly>
         <label for="title" class="custom-label">Nome do livro:</label>
